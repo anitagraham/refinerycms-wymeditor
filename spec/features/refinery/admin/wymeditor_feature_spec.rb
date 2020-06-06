@@ -31,7 +31,7 @@ describe 'wymeditor', :type => :feature do
       visit refinery.edit_admin_page_path(about_page)
 
       find("#page_part_body .wym_tools_link a").click
-
+      
       expect(page).to have_selector("iframe#dialog_frame")
 
       page.within_frame("dialog_frame") do

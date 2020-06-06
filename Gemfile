@@ -5,17 +5,24 @@ gemspec
 git "https://github.com/refinery/refinerycms", branch: "master" do
   gem 'refinerycms'
 
-  group :development, :test do
-    gem 'refinerycms-testing'
-  end
+end
+
+group :development do
+  gem 'listen'
 end
 
 group :test do
-  gem 'pry'
+  gem 'poltergeist'
+  gem 'puma'
+  gem 'capybara-screenshot'
+  gem 'refinerycms-testing'
+  gem 'generator_spec', '~> 0.9.3'
   gem 'launchy'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
-  gem 'listen'
+  gem 'coveralls', require: false
+  gem 'rspec-retry'
+
+  # TODO: Use beta source for Rails 6 support
+  gem 'rspec-rails', '~> 4.0.0.beta3'
 end
 
 # Database Configuration
